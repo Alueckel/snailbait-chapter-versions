@@ -1,0 +1,3 @@
+This question doesn't really ask for code to be submitted, since it involves commenting out a single line and then re-activating that line.
+
+Commenting out that line in the togglePaused function causes the game to jump forward in time after the game is resumed. This is because the game continues to calculate frames even while the game is paused. That line of code tells the game to resume from the frame right before the pause was triggered instead of the actual current frame, so re-activating that line eliminates the jump forward in time.
