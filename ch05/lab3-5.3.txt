@@ -1,0 +1,1 @@
+The layout is unchanged and elements still fade in and out, but the loading screen no longer appears when starting up the game. This may be because it is being covered by the canvas.
