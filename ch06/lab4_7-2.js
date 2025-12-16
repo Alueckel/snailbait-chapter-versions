@@ -138,6 +138,9 @@ var SnailBait = function () {
    this.SNAIL_CELLS_HEIGHT = 34;
    this.SNAIL_CELLS_WIDTH  = 64;
 
+   this.SPINNING_COIN_CELLS_HEIGHT = 16;
+   this.SPINNING_COIN_CELLS_WIDTH = 16;
+
    this.batCells = [
       { left: 3,   top: 0, width: 36, height: this.BAT_CELLS_HEIGHT },
       { left: 41,  top: 0, width: 46, height: this.BAT_CELLS_HEIGHT },
@@ -330,6 +333,11 @@ var SnailBait = function () {
       { left: 2,   top: 466, width: this.SNAIL_CELLS_WIDTH, 
                              height: this.SNAIL_CELLS_HEIGHT },
    ]; 
+
+   this.spinningCoinCells = [ //Cells for my sprite
+      {left: 389, top: 10, width: this.SPINNING_COIN_CELLS_WIDTH, 
+                           height: this.SPINNING_COIN_CELLS_HEIGHT}
+   ];
 
    // Sprite data.......................................................
 
@@ -597,6 +605,11 @@ var SnailBait = function () {
       { platformIndex: 13 },
    ];
 
+   this.spinningCoinData = [ //Data for my sprite
+          { left: 425,  
+         top: this.TRACK_3_BASELINE - this.SPINNING_COIN_CELLS_HEIGHT },
+   ];
+
    // Sprites...........................................................
   
    this.bats         = [];
@@ -607,6 +620,7 @@ var SnailBait = function () {
    this.rubies       = [];
    this.sapphires    = [];
    this.snails       = [];
+   this.spinningCoins = []; //My sprite's array
 
    this.sprites = []; // For convenience, contains all of the sprites  
                       // from the preceding arrays
@@ -644,6 +658,7 @@ SnailBait.prototype = {
       this.createRubySprites();
       this.createSapphireSprites();
       this.createSnailSprites();
+      this.createSpinningCoinSprites();
 
       this.initializeSprites();
 
@@ -685,6 +700,10 @@ SnailBait.prototype = {
          this.sprites.push(this.snails[i]);
       }
 
+      for (var i=0; i < this.spinningCoins.length; ++i) { //Including my sprite in the master array
+         this.sprites.push(this.spinningCoins[i]);
+      }
+
       this.sprites.push(this.runner);
    },
 
@@ -713,6 +732,7 @@ SnailBait.prototype = {
       this.positionSprites(this.rubies,    this.rubyData);
       this.positionSprites(this.sapphires, this.sapphireData);
       this.positionSprites(this.snails,    this.snailData);
+      this.positionSprites(this.spinningCoins, this.spinningCoinData); //Positioning my sprite
    },
 
    createBatSprites: function () {
@@ -879,6 +899,22 @@ SnailBait.prototype = {
          snail.velocityX = snailBait.SNAIL_PACE_VELOCITY;
 
          this.snails.push(snail);
+      }
+   },
+
+   //Adding my sprite
+   createSpinningCoinSprites: function () {
+      var spinningCoin;
+
+      for (var i = 0; i < this.spinningCoinData.length; ++i) {
+         spinningCoin = new Sprite('spinningCoin',
+                          new SpriteSheetArtist(this.spritesheet, 
+                                                this.spinningCoinCells));
+
+         spinningCoin.width = this.SPINNING_COIN_CELLS_WIDTH; 
+         spinningCoin.height = this.SPINNING_COIN_CELLS_HEIGHT;
+
+         this.spinningCoins.push(spinningCoin);
       }
    },
 
