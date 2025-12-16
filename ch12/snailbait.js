@@ -1336,6 +1336,7 @@ SnailBait.prototype = {
          coin.width = this.COIN_CELLS_WIDTH;
          coin.height = this.COIN_CELLS_HEIGHT;
          coin.value = 50;
+         coin.showCollisionRectangle = true;
 
          coin.collisionMargin = {
             left:   coin.width/8, top:    coin.height/8,
