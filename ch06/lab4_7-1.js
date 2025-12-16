@@ -334,49 +334,49 @@ var SnailBait = function () {
    // Sprite data.......................................................
 
    this.batData = [
-      { left: 85,  
+      { left: 185,  
          top: this.TRACK_2_BASELINE - 1.5*this.BAT_CELLS_HEIGHT },
 
-      { left: 620,  
+      { left: 720,  
          top: this.TRACK_3_BASELINE },
 
-      { left: 904,  
+      { left: 1004,  
          top: this.TRACK_3_BASELINE - 3*this.BAT_CELLS_HEIGHT },
 
-      { left: 1150, 
+      { left: 1250, 
          top: this.TRACK_2_BASELINE - 3*this.BAT_CELLS_HEIGHT },
 
-      { left: 1720, 
+      { left: 1820, 
          top: this.TRACK_2_BASELINE - 2*this.BAT_CELLS_HEIGHT },
 
-      { left: 1960, 
+      { left: 2060, 
          top: this.TRACK_3_BASELINE - this.BAT_CELLS_HEIGHT }, 
 
-      { left: 2200, 
+      { left: 2300, 
          top: this.TRACK_3_BASELINE - this.BAT_CELLS_HEIGHT },
 
-      { left: 2380, 
+      { left: 2480, 
          top: this.TRACK_3_BASELINE - 2*this.BAT_CELLS_HEIGHT },
    ];
    
    this.beeData = [
-      { left: 200,  
+      { left: 150,  
          top: this.TRACK_1_BASELINE - this.BEE_CELLS_HEIGHT*1.5 },
-      { left: 350,  
+      { left: 300,  
          top: this.TRACK_2_BASELINE - this.BEE_CELLS_HEIGHT*1.5 },
-      { left: 550,  
+      { left: 500,  
          top: this.TRACK_1_BASELINE - this.BEE_CELLS_HEIGHT },
-      { left: 750,  
+      { left: 700,  
          top: this.TRACK_1_BASELINE - this.BEE_CELLS_HEIGHT*1.5 },
 
-      { left: 924,  
+      { left: 874,  
          top: this.TRACK_2_BASELINE - this.BEE_CELLS_HEIGHT*1.75 },
 
-      { left: 1500, top: 225 },
-      { left: 1600, top: 115 },
-      { left: 2225, top: 125 },
-      { left: 2295, top: 275 },
-      { left: 2450, top: 275 },
+      { left: 1450, top: 225 },
+      { left: 1550, top: 115 },
+      { left: 2175, top: 125 },
+      { left: 2245, top: 275 },
+      { left: 2400, top: 275 },
    ];
    
    this.buttonData = [
@@ -385,40 +385,40 @@ var SnailBait = function () {
    ];
 
    this.coinData = [
-      { left: 270,  
+      { left: 300,  
          top: this.TRACK_2_BASELINE - this.COIN_CELLS_HEIGHT }, 
 
-      { left: 489,  
+      { left: 519,  
          top: this.TRACK_3_BASELINE - this.COIN_CELLS_HEIGHT }, 
 
-      { left: 620,  
+      { left: 650,  
          top: this.TRACK_1_BASELINE - this.COIN_CELLS_HEIGHT }, 
 
-      { left: 833,  
+      { left: 863,  
          top: this.TRACK_2_BASELINE - this.COIN_CELLS_HEIGHT }, 
 
-      { left: 1050, 
+      { left: 1080, 
          top: this.TRACK_2_BASELINE - this.COIN_CELLS_HEIGHT }, 
 
-      { left: 1450, 
+      { left: 1480, 
          top: this.TRACK_1_BASELINE - this.COIN_CELLS_HEIGHT }, 
 
-      { left: 1670, 
+      { left: 1700, 
          top: this.TRACK_2_BASELINE - this.COIN_CELLS_HEIGHT }, 
 
-      { left: 1870, 
+      { left: 1900, 
          top: this.TRACK_1_BASELINE - this.COIN_CELLS_HEIGHT }, 
 
-      { left: 1930, 
+      { left: 1960, 
          top: this.TRACK_1_BASELINE - this.COIN_CELLS_HEIGHT }, 
 
-      { left: 2200, 
+      { left: 2230, 
          top: this.TRACK_2_BASELINE - this.COIN_CELLS_HEIGHT }, 
 
-      { left: 2320, 
+      { left: 2350, 
          top: this.TRACK_2_BASELINE - this.COIN_CELLS_HEIGHT }, 
 
-      { left: 2360, 
+      { left: 2390, 
          top: this.TRACK_1_BASELINE - this.COIN_CELLS_HEIGHT }, 
    ];  
 
@@ -560,37 +560,37 @@ var SnailBait = function () {
    ];
 
    this.sapphireData = [
-      { left: 140,  
+      { left: 165,  
          top: this.TRACK_1_BASELINE - this.SAPPHIRE_CELLS_HEIGHT },
 
-      { left: 880,  
+      { left: 905,  
          top: this.TRACK_2_BASELINE - this.SAPPHIRE_CELLS_HEIGHT },
 
-      { left: 1100, 
+      { left: 1125, 
          top: this.TRACK_2_BASELINE - this.SAPPHIRE_CELLS_HEIGHT }, 
 
-      { left: 1475, 
+      { left: 1500, 
          top: this.TRACK_1_BASELINE - this.SAPPHIRE_CELLS_HEIGHT },
 
-      { left: 2400, 
+      { left: 2425, 
          top: this.TRACK_1_BASELINE - this.SAPPHIRE_CELLS_HEIGHT },
    ];
 
    this.rubyData = [
-      { left: 690,  
+      { left: 680,  
          top: this.TRACK_1_BASELINE - this.RUBY_CELLS_HEIGHT },
 
-      { left: 1700, 
+      { left: 1690, 
          top: this.TRACK_2_BASELINE - this.RUBY_CELLS_HEIGHT },
 
-      { left: 2056, 
+      { left: 2046, 
          top: this.TRACK_2_BASELINE - this.RUBY_CELLS_HEIGHT },
    ];
 
    this.smokingHoleData = [
-      { left: 248,  top: this.TRACK_2_BASELINE - 22 },
-      { left: 688,  top: this.TRACK_3_BASELINE + 5 },
-      { left: 1352,  top: this.TRACK_2_BASELINE - 18 },
+      { left: 240,  top: this.TRACK_2_BASELINE - 22 },
+      { left: 680,  top: this.TRACK_3_BASELINE + 5 },
+      { left: 1350,  top: this.TRACK_2_BASELINE - 18 },
    ];
    
    this.snailData = [
