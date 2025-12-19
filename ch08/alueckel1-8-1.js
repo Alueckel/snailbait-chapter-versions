@@ -748,7 +748,7 @@ var SnailBait = function () {
    };
 
    this.jumpBehavior = {
-      pause: function (sprite) {
+      /* pause: function (sprite) {
          if (sprite.ascendTimer.isRunning()) {
             sprite.ascendTimer.pause();
          }
@@ -764,7 +764,7 @@ var SnailBait = function () {
          else if (sprite.descendTimer.isRunning()) {
             sprite.descendTimer.unpause();
          }
-      },
+      }, */
 
       isAscending: function (sprite) {
          return sprite.ascendTimer.isRunning();

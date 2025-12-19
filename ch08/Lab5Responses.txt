@@ -1,0 +1,6 @@
+Problem 1:
+In the initial code, if the game is paused while the runner is jumping, the runner freezes and then resumes exactly where she left off when the game resumes. When the pause and unpause methods in the jump behavior are removed, this no longer happens. If the runner is ascending when the game is paused, she will descend through the floor when the game resumes. If she is descending when the game is paused, then she snaps to the ground when the game resumes. 
+
+Problem 3:
+
+If the JUMP_DURATION variable is changed from 1000ms to 2000ms, then the runner does indeed jump just as high, but has twice as much time in the air. The greater the JUMP_DURATION variable, the longer the runner will spend in the air, no matter how high she jumps. This can change the feel of the game - spending longer in the air makes things feel more floaty, which isn't always the best option. Changing the JUMP_HEIGHT variable will affect how high the runner jumps, but not how long she spends in the air. Messing with the ratio of the two variables to each other too much can create a situation where the runner jumps too fast and too high for the player to control, or where the runner jumps too slowly or not high enough to land.
