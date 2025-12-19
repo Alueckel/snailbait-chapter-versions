@@ -1,3 +1,7 @@
+/*Abby Lueckel
+12-16-2025
+2D Foundations*/
+
 var SnailBait = function () {
    this.canvas = document.getElementById('game-canvas'),
    this.context = this.canvas.getContext('2d'),
