@@ -104,6 +104,7 @@ var SnailBait = function () {
 
    // Score.............................................................
 
+   this.score = 0;
    this.scoreElement = document.getElementById('score'),
 
    // Sound and music...................................................
@@ -846,6 +847,20 @@ var SnailBait = function () {
    };
 
    this.collideBehavior = {
+      adjustScore: function (sprite) {
+         if (sprite.value) {
+            snailBait.score += sprite.value;
+            snailBait.updateScoreElement();
+         }
+      }, 
+
+      processAssetCollision: function (sprite) {
+         sprite.visible = false; // makes the asset sprite disappear
+
+         this.adjustScore(sprite);
+
+      },
+
       isCandidateForCollision: function (sprite, otherSprite) {
          var s, o;
          
@@ -892,7 +907,7 @@ var SnailBait = function () {
       },
 
       processBadGuyCollision: function (sprite) {
-         // TODO
+         console.log('Ouch! Enemy ' + sprite.type + ' hit!'); //Problem 3.5 for Lab 7
       },
 
       processCollision: function (sprite, otherSprite) {
@@ -901,9 +916,12 @@ var SnailBait = function () {
          }
          else if ('coin'  === otherSprite.type    || 
                   'sapphire' === otherSprite.type ||
-                  'ruby' === otherSprite.type     || 
-                  'snail bomb' === otherSprite.type ||
-                  'snail' === otherSprite.type) {
+                  'ruby' === otherSprite.type) {
+            otherSprite.visible = false;
+            this.processAssetCollision(otherSprite);
+         }
+         else if('snail bomb' === otherSprite.type ||
+                  'snail' === otherSprite.type){
             otherSprite.visible = false;
          }
 
@@ -1059,6 +1077,27 @@ SnailBait.prototype = {
       });      
    },
 
+   setSpriteValues: function() {  //Values adjusted as part of Lab 7
+      var sprite,
+          COIN_VALUE = 10,
+          SAPPHIRE_VALUE = 50,
+          RUBY_VALUE = 100;
+
+      for (var i = 0; i < this.sprites.length; ++i) {
+         sprite = this.sprites[i];
+
+         if (sprite.type === 'coin') {
+            sprite.value = COIN_VALUE;
+         }
+         else if (sprite.type === 'ruby') {
+            sprite.value = RUBY_VALUE;
+         }
+         else if (sprite.type === 'sapphire') {
+            sprite.value = SAPPHIRE_VALUE;
+         }
+      }
+   },
+
    initializeSprites: function() {  
       this.positionSprites(this.bats,      this.batData);
       this.positionSprites(this.bees,      this.beeData);
@@ -1070,6 +1109,7 @@ SnailBait.prototype = {
 
       this.armSnails();
       this.equipRunner();
+      this.setSpriteValues();
    },
 
    createBatSprites: function () {
@@ -1785,6 +1825,10 @@ SnailBait.prototype = {
            'Avoid bats and bees.', 
            INITIAL_TOAST_DURATION);
       }, INITIAL_TOAST_DELAY);
+   },
+
+   updateScoreElement: function () {
+      this.scoreElement.innerHTML = this.score;
    },
 
    startGame: function () {
