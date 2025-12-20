@@ -75,6 +75,7 @@ var SnailBait = function () {
    this.windowHasFocus = true;
    this.countdownInProgress = false;
    this.gameStarted = false;
+   this.slowMotion = false;
 
    // Images............................................................
    
@@ -1533,6 +1534,17 @@ SnailBait.prototype = {
       }
    },
 
+   toggleSlowMotion: function (toggle) {
+
+      if(!toggle){
+         this.setTimeRate(.3);
+      }
+      else{
+         this.setTimeRate(1);
+      }
+
+   },
+
    // ------------------------- INITIALIZATION ----------------------------
 
    backgroundLoaded: function () {
@@ -1629,7 +1641,7 @@ SnailBait.prototype = {
       this.revealInitialToast();
 
       this.timeSystem.start();
-      this.setTimeRate(0.1);
+      this.setTimeRate(1); //Noticed this was a really low value that made the game run slow. Changed this as part of Problem 10-1.
 
       this.gameStarted = true;
 
@@ -1652,6 +1664,11 @@ window.onkeydown = function (e) {
    }
    else if (key === 74) { // 'j'
       snailBait.runner.jump();
+   }
+
+   else if(key === 83) { //'s'
+      snailBait.toggleSlowMotion(snailBait.slowMotion);
+      snailBait.slowMotion = !snailBait.slowMotion;
    }
 };
 

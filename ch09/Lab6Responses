@@ -1,0 +1,5 @@
+Chapter 9 Problem 1:
+When the assignment to this.easingFunction is commented out in the AnimationTimer constructor, the runner jumps at a consistent rate rising and falling instead of a more realistic rate. This is because the easingFunction includes a function that divices by the elapsed time twice, making it an acceleration function instead of a linear velocity function. Jumping in real life is based on acceleration instead of flat velocity, so basing the runner's motion on acceleration looks more realistic.
+
+Chapter 9 Problem 2:
+Swapping the functions does indeed make it look like the coins and jewels are bouncing upside down. This is because it reverses the direction of the acceleration, making the objects move faster at the top of their motion instead of at the bottom like it would be in reality. 
